@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Up</title>
+    <link rel="stylesheet" href="main.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:ital,wght@0,100;0,300;0,400;0,600;0,700;1,400;1,500&display=swap"
+        rel="stylesheet">
+    <link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="form-container">
+        <div class="form-box">
+            <div class="form-login">
+                <span class="title">login</span>
+
+                <form action="#">
+                    <div class="input-field">
+                        <input type="text" placeholder="enter your email" required>
+                        <i class="fa fa-envelope"></i>
+                    </div>
+
+                    <div class="input-field">
+                        <input type="password" class="password" placeholder="enter your password" required>
+                        <i class="fa fa-lock icon"></i>
+                        <i class="fa fa-eye-slash hidepw"></i>
+                    </div>
+
+                    <div class="checkbox-text">
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="logcheck">
+                            <label for="logcheck" class="text">remember me</label>
+                        </div>
+
+                        <a href="#" class="text">forgot password?</a>
+                    </div>
+
+                    <div class="input-field button">
+                        <input type="button" value="login now">
+                    </div>
+
+                    <div class="login-signup">
+                        <span class="text">not a member?
+                            <a href="#" class="text signup-text">signup now</a>
+                        </span>
+                    </div>
+                </form>
+            </div>
+
+
+
+            <div class="form-signup">
+                <span class="title">registration</span>
+
+                <div class="button-box">
+                    <a type="button" id="student-btn" class="btn">student</a>
+                    <a type="button" id="hosteller-btn" class="btn">hosteller</a>
+                </div>
+
+                <div class="signup-box">
+                    <!--student-->
+
+                    <form class="student" action="#">
+                        <div class="input-field">
+                            <input type="text" placeholder="student name" required>
+                            <i class="fa fa-user"></i>
+                        </div>
+
+                        <div class="input-field">
+                            <input type="text" placeholder="enter your email" required>
+                            <i class="fa fa-envelope"></i>
+                        </div>
+
+                        <div class="input-field">
+                            <input type="password" class="password" placeholder="enter your password" required>
+                            <i class="fa fa-lock icon"></i>
+                        </div>
+
+                        <div class="input-field">
+                            <input type="password" class="password" placeholder="enter your password" required>
+                            <i class="fa fa-lock icon"></i>
+                            <i class="fa fa-eye-slash hidepw"></i>
+                        </div>
+
+                        <div class="checkbox-text">
+                            <div class="checkbox-content">
+                                <input type="checkbox" id="logcheck">
+                                <label for="logcheck" class="text">remember me</label>
+                            </div>
+
+                            <a href="#" class="text">forgot password?</a>
+                        </div>
+
+                        <div class="input-field button">
+                            <input type="button" value="sign up now">
+                        </div>
+
+                        <div class="login-signup">
+                            <span class="text">not a member?
+                                <a href="#" class="text login-text">login now</a>
+                            </span>
+                        </div>
+                    </form>
+
+
+                    <!--hosteller-->
+
+                    <form class="hosteller" action="#">
+                        <div class="input-field">
+                            <input type="text" placeholder="hostal name" required>
+                            <i class="fa fa-user"></i>
+                        </div>
+
+                        <div class="input-field">
+                            <input type="text" placeholder="enter your email" required>
+                            <i class="fa fa-envelope"></i>
+                        </div>
+
+                        <div class="input-field">
+                            <input type="password" class="password" placeholder="enter your password" required>
+                            <i class="fa fa-lock icon"></i>
+                        </div>
+
+                        <div class="input-field">
+                            <input type="password" class="password" placeholder="enter your password" required>
+                            <i class="fa fa-lock icon"></i>
+                            <i class="fa fa-eye-slash hidepw"></i>
+                        </div>
+
+                        <div class="checkbox-text">
+                            <div class="checkbox-content">
+                                <input type="checkbox" id="logcheck">
+                                <label for="logcheck" class="text">remember me</label>
+                            </div>
+
+                            <a href="#" class="text">forgot password?</a>
+                        </div>
+
+                        <div class="input-field button">
+                            <input type="button" value="sign up now">
+                        </div>
+
+                        <div class="login-signup">
+                            <span class="text">not a member?
+                                <a href="#" class="text login-text">login now</a>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const formContainer = document.querySelector(".form-container"),
+            hidePw = document.querySelectorAll(".hidepw"),
+            pwField = document.querySelectorAll(".password"),
+            signUp = document.querySelector(".signup-text"),
+            login = document.querySelector(".login-text"),
+            container = document.querySelector(".form-container"),
+            studentBtn = document.getElementById("student-btn"),
+            hostellerBtn = document.getElementById("hosteller-btn"),
+            formSignup = document.querySelector(".form-signup");
+
+
+        //hide password code//
+
+        hidePw.forEach(eyeIcon => {
+            eyeIcon.addEventListener("click", () => {
+                pwField.forEach(pwField => {
+                    if (pwField.type === "password") {
+                        pwField.type = "text";
+
+                        hidePw.forEach(icon => {
+                            icon.classList.replace("fa-eye-slash", "fa-eye");
+                        })
+                    }
+                    else {
+                        pwField.type = "password";
+
+                        hidePw.forEach(icon => {
+                            icon.classList.replace("fa-eye", "fa-eye-slash");
+                        })
+                    }
+                })
+            })
+        })
+
+        //code to appear signup and login form//
+
+        signUp.addEventListener("click", () => {
+            container.classList.add("active");
+        });
+
+        login.addEventListener("click", () => {
+            container.classList.remove("active");
+        })
+
+
+        //code for student and hosteller registration//
+
+        hostellerBtn.addEventListener("click", () => {
+            formSignup.classList.add("active");
+        });
+
+        studentBtn.addEventListener("click", () => {
+            formSignup.classList.remove("active");
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>
